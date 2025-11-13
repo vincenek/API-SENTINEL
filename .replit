@@ -1,0 +1,7 @@
+run = "cd backend && dart run bin/server.dart"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "cd backend && dart run bin/server.dart"]

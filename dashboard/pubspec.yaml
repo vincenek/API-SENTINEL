@@ -1,0 +1,37 @@
+name: api_sentinel_dashboard
+description: Flutter Web Dashboard for API Sentinel - Monitor failovers, manage API keys, and view analytics
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # HTTP & State Management
+  http: ^1.1.0
+  provider: ^6.1.1
+  
+  # UI Components
+  flutter_svg: ^2.0.9
+  fl_chart: ^0.66.0
+  intl: ^0.19.0
+  
+  # Storage
+  shared_preferences: ^2.2.2
+  
+  # Utils
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  # assets:
+  #   - assets/
+  #   - .env

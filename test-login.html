@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Test</title>
+</head>
+<body>
+    <h1>Simple Login Test</h1>
+    <input type="text" id="apiKeyInput" value="sk_bb2513f3e73346508e350c44b0f996fa" style="width: 400px;">
+    <button onclick="testLogin()">Test Login</button>
+    <div id="result" style="margin-top: 20px; padding: 20px; border: 1px solid #ccc;"></div>
+
+    <script>
+        async function testLogin() {
+            const apiKey = document.getElementById('apiKeyInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            resultDiv.innerHTML = '<p>Testing API key: ' + apiKey + '</p>';
+            
+            try {
+                const response = await fetch('http://localhost:8080/api/v1/keys/verify', {
+                    headers: {
+                        'Authorization': 'Bearer ' + apiKey
+                    }
+                });
+                
+                resultDiv.innerHTML += '<p>Response status: ' + response.status + '</p>';
+                
+                const data = await response.json();
+                resultDiv.innerHTML += '<p>Response data: ' + JSON.stringify(data) + '</p>';
+                
+                if (data.valid) {
+                    resultDiv.innerHTML += '<h2 style="color: green;">✅ LOGIN WORKS!</h2>';
+                    resultDiv.innerHTML += '<p>Customer ID: ' + data.customerId + '</p>';
+                } else {
+                    resultDiv.innerHTML += '<h2 style="color: red;">❌ Invalid API key</h2>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML += '<h2 style="color: red;">❌ ERROR: ' + error.message + '</h2>';
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

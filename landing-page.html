@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Sentinel - Recover Lost Payment Revenue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .problem {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .problem h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+        
+        .stat {
+            font-size: 3em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .pricing {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .price {
+            font-size: 3em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .integration {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 800px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .signup-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .signup-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .signup-form button {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .signup-form button:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Stop Losing Money to Payment Failures</h1>
+        <p>Automatically recover failed payments with intelligent gateway failover</p>
+        <a href="#signup" class="cta-button">Start Recovering Revenue Now</a>
+    </div>
+
+    <div class="container">
+        <div class="problem">
+            <h2>You're Bleeding Revenue</h2>
+            <p class="stat">3%</p>
+            <p style="font-size: 1.3em;">of all online payments fail due to technical issues</p>
+            <p class="stat">77%</p>
+            <p style="font-size: 1.3em;">of customers never retry after seeing an error</p>
+            <p style="font-size: 1.5em; margin-top: 40px;">
+                Processing <strong>$500K monthly</strong>? You're losing <strong style="color: #e74c3c;">$15,000</strong> every month.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>⚡ Instant Failover</h3>
+                <p>When your primary payment gateway fails, we automatically retry with your backup gateway in under 2 seconds. Customers never see an error.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Real Analytics</h3>
+                <p>See exactly how much revenue you're recovering, which gateways are failing, and when. Make data-driven decisions about your payment stack.</p>
+            </div>
+            <div class="feature">
+                <h3>🔒 Enterprise Security</h3>
+                <p>We never touch payment data. Your existing PCI compliance covers our integration. Just intelligent routing decisions.</p>
+            </div>
+            <div class="feature">
+                <h3>⏱️ 30-Minute Integration</h3>
+                <p>Two-line code change. Works with Stripe, PayPal, Braintree, Square, Razorpay, and more. No changes to your payment flow.</p>
+            </div>
+            <div class="feature">
+                <h3>💰 80% Recovery Rate</h3>
+                <p>Industry average: 23% of customers retry manually. With API Sentinel: 80% of failed payments succeed on backup gateway.</p>
+            </div>
+            <div class="feature">
+                <h3>📈 Pay for Performance</h3>
+                <p>Only pay when we recover revenue for you. 2% of recovered transactions. If we don't deliver value, you pay nothing.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing">
+        <h2>Simple, Performance-Based Pricing</h2>
+        <div class="price-card">
+            <h3>Pay Only for Success</h3>
+            <div class="price">2%</div>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">of recovered transaction amount</p>
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+            <p><strong>Example:</strong></p>
+            <p>Failed transaction: $100</p>
+            <p>We recover it: ✅</p>
+            <p>You pay: $2</p>
+            <p style="margin-top: 20px; color: #27ae60; font-weight: bold;">You keep: $98 that would have been lost</p>
+            <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+            <p style="font-size: 0.9em; color: #666;">
+                ✅ No setup fees<br>
+                ✅ No monthly minimum<br>
+                ✅ No contracts<br>
+                ✅ Cancel anytime
+            </p>
+        </div>
+    </div>
+
+    <div class="integration">
+        <div class="container">
+            <h2 style="font-size: 2.5em; margin-bottom: 40px;">Integration Takes 30 Minutes</h2>
+            
+            <div class="code-block">
+                <code>
+<span style="color: #608b4e;">// Install the SDK</span><br>
+<span style="color: #9cdcfe;">dependencies:</span><br>
+  <span style="color: #ce9178;">apisentinei: ^1.0.0</span><br>
+<br>
+<span style="color: #608b4e;">// Initialize (once at app startup)</span><br>
+<span style="color: #c586c0;">final</span> sentinel = <span style="color: #dcdcaa;">APISentinel</span>();<br>
+<span style="color: #c586c0;">await</span> sentinel.<span style="color: #dcdcaa;">initialize</span>(<span style="color: #dcdcaa;">SentinelConfig</span>(<br>
+  apiKey: <span style="color: #ce9178;">'your_api_key_here'</span>,<br>
+  sentinelBaseUrl: <span style="color: #ce9178;">'https://apisentinel.up.railway.app'</span>,<br>
+  primaryGateway: <span style="color: #ce9178;">'stripe'</span>,<br>
+  secondaryGateway: <span style="color: #ce9178;">'paypal'</span>,<br>
+));<br>
+<br>
+<span style="color: #608b4e;">// Replace your payment call (2-line change)</span><br>
+<span style="color: #c586c0;">final</span> response = <span style="color: #c586c0;">await</span> sentinel.<span style="color: #dcdcaa;">postWithFailover</span>(<br>
+  endpoint: <span style="color: #ce9178;">'/charges'</span>,<br>
+  data: paymentData,<br>
+);<br>
+<br>
+<span style="color: #608b4e;">// That's it! Automatic failover enabled ✅</span>
+                </code>
+            </div>
+
+            <p style="font-size: 1.2em; margin-top: 40px;">
+                Works with: <strong>Stripe, PayPal, Braintree, Square, Razorpay, Adyen</strong> and more
+            </p>
+        </div>
+    </div>
+
+    <div class="container" id="signup">
+        <div class="signup-form">
+            <h2 style="text-align: center; margin-bottom: 30px;">Start Recovering Revenue</h2>
+            <form id="signupForm">
+                <input type="text" id="companyName" placeholder="Company Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="password" id="password" placeholder="Password (min 8 characters)" required>
+                <button type="submit">Create Account & Get API Key</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9em;">
+                Free to start • Pay only for recovered transactions • Cancel anytime
+            </p>
+            <div id="result" style="margin-top: 20px; padding: 15px; border-radius: 5px; display: none;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 API Sentinel. Recover lost payment revenue automatically.</p>
+        <p style="margin-top: 10px;">
+            <a href="mailto:support@apisentinel.com" style="color: white;">support@apisentinel.com</a> •
+            <a href="/api/v1/docs" style="color: white;">API Docs</a> •
+            <a href="https://github.com/yourusername/apisentinel" style="color: white;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const companyName = document.getElementById('companyName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // CHANGE THIS: Use localhost for testing, production URL for live
+                // const BACKEND_URL = 'http://localhost:8080';
+                const BACKEND_URL = 'https://95477e84-9911-4614-bb62-52ba832fcb90-00-1a973zog8mm4f.janeway.replit.dev:8080';
+
+                const response = await fetch(`${BACKEND_URL}/api/v1/customers/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        companyName,
+                        email,
+                        password,
+                    }),
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.style.display = 'block';
+                    resultDiv.style.background = '#d4edda';
+                    resultDiv.style.color = '#155724';
+                    resultDiv.innerHTML = `
+                        <strong>✅ Account Created!</strong><br><br>
+                        Your API Key: <code style="background: #fff; padding: 5px; border-radius: 3px; font-family: monospace;">${data.apiKey}</code><br><br>
+                        Check your email for integration instructions.
+                    `;
+                    document.getElementById('signupForm').reset();
+                } else {
+                    throw new Error(data.error || 'Registration failed');
+                }
+            } catch (error) {
+                resultDiv.style.display = 'block';
+                resultDiv.style.background = '#f8d7da';
+                resultDiv.style.color = '#721c24';
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>
