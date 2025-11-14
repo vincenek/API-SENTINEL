@@ -1,15 +1,17 @@
 FROM dart:stable
 
-WORKDIR /app/backend
+WORKDIR /app
 
-# Copy pubspec file
-COPY backend/pubspec.yaml ./
+# Copy pubspec files
+COPY pubspec.yaml ./
+COPY pubspec.lock ./
 
 # Install dependencies
 RUN dart pub get
 
-# Copy the rest of the application
-COPY backend/ ./
+# Copy source code
+COPY bin ./bin
+COPY lib ./lib
 
 # Expose port
 EXPOSE 8080
