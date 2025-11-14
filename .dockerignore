@@ -1,0 +1,35 @@
+# Ignore backend folder (git submodule)
+backend/
+
+# Ignore deployment files
+deploy/
+*.html
+
+# Ignore git
+.git/
+.gitignore
+.gitmodules
+
+# Ignore platform-specific folders
+android/
+ios/
+linux/
+macos/
+windows/
+web/
+
+# Ignore test files
+test/
+
+# Ignore docs
+README.md
+*.md
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.iml
+
+# BUT keep bin/ and lib/ - they are needed!
+!bin/
+!lib/
