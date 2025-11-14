@@ -1,6 +1,3 @@
-# Ignore backend folder (git submodule)
-backend/
-
 # Ignore deployment files
 deploy/
 *.html
@@ -8,7 +5,6 @@ deploy/
 # Ignore git
 .git/
 .gitignore
-.gitmodules
 
 # Ignore platform-specific folders
 android/
@@ -30,6 +26,6 @@ README.md
 .idea/
 *.iml
 
-# BUT keep bin/ and lib/ - they are needed!
-!bin/
-!lib/
+# Keep backend folder - we need it!
+!backend/
+
