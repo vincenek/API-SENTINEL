@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: apisentinel-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: JWT_SECRET
+        value: prod-secret-key-change-later-12345
+      - key: PORT
+        value: 8080
+    healthCheckPath: /health

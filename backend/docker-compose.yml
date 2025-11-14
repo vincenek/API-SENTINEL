@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  apisentinel:
+    build: .
+    container_name: apisentinel-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-key-change-in-production}
+      - DATABASE_PATH=/app/data/api_sentinel.db
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

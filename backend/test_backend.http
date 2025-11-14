@@ -1,0 +1,76 @@
+### Health Check
+GET http://localhost:8080/health
+
+### Register New Customer
+POST http://localhost:8080/api/v1/customers/register
+Content-Type: application/json
+
+{
+  "companyName": "Acme Corp",
+  "email": "admin@acme.com",
+  "password": "SecurePass123!",
+  "primaryGateway": "stripe",
+  "secondaryGateway": "paypal"
+}
+
+### Login
+POST http://localhost:8080/api/v1/customers/login
+Content-Type: application/json
+
+{
+  "email": "admin@acme.com",
+  "password": "SecurePass123!"
+}
+
+### Get Profile (replace token)
+GET http://localhost:8080/api/v1/customers/profile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Generate API Key (replace token)
+POST http://localhost:8080/api/v1/keys/generate
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "name": "Production Key"
+}
+
+### List API Keys (replace token)
+GET http://localhost:8080/api/v1/keys
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Send Failover Event (replace with actual API key)
+POST http://localhost:8080/api/v1/analytics/events
+Content-Type: application/json
+Authorization: Bearer sk_YOUR_API_KEY_HERE
+
+{
+  "timestamp": "2024-01-10T15:30:00.000Z",
+  "primaryGateway": "stripe",
+  "secondaryGateway": "paypal",
+  "errorType": "network_timeout",
+  "amount": 99.99,
+  "currency": "USD",
+  "success": true,
+  "recoveryTimeMs": 234
+}
+
+### Get Analytics Events (replace token)
+GET http://localhost:8080/api/v1/analytics/events?limit=10&offset=0
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get Metrics Overview (replace token)
+GET http://localhost:8080/api/v1/metrics/overview
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get Recovered Revenue (replace token)
+GET http://localhost:8080/api/v1/metrics/recovered-revenue
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get Failover Rate (replace token)
+GET http://localhost:8080/api/v1/metrics/failover-rate
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get Gateway Performance (replace token)
+GET http://localhost:8080/api/v1/metrics/gateway-performance
+Authorization: Bearer YOUR_JWT_TOKEN_HERE

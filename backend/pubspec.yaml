@@ -1,0 +1,21 @@
+name: api_sentinel_backend
+description: Backend service for API Sentinel - Analytics and API key management
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  shelf: ^1.4.1
+  shelf_router: ^1.1.4
+  sqlite3: ^2.4.0
+  crypto: ^3.0.3
+  dart_jsonwebtoken: ^2.13.0
+  uuid: ^4.3.3
+  dotenv: ^4.2.0
+  bcrypt: ^1.1.3
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

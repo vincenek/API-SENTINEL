@@ -1,0 +1,5 @@
+{
+  "install": "dart pub get",
+  "build": "dart compile exe bin/server.dart -o server",
+  "start": "./server"
+}
